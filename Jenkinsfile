@@ -3,14 +3,14 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key')
-	    // GIT_TOKEN = credentials('git-token')
+	    GIT_TOKEN = credentials('git-token')
     }
 	
     stages {
         stage('Git Checkout') {
             steps {
-            //    git "https://${GIT_TOKEN}@github.com/vishal-bulbule/gcp-tf-jenkin.git"
-               git "https://github.com/nasir19noor/terraform-gcp-jenkins.git"
+               git "https://${GIT_TOKEN}@github.com/nasir19noor/terraform-gcp-jenkins.git"
+            //    git "https://github.com/nasir19noor/terraform-gcp-jenkins.git"
             }
         }
         
