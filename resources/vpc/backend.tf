@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
     bucket = "terraform-state-nasir"
-    prefix = "jenkins/vpc"
+    prefix = "jenkins-2/vpc"
   }
 }
