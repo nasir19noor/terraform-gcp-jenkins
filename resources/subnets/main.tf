@@ -1,7 +1,7 @@
 module "subnets" {
   source       = "../../modules/subnets"
   project_id   = "nasir-434503"
-  network_name = "nasir"
+  network_name = "jenkins"
 #   region       = "asia-southeast-1"
 
   subnets = [
