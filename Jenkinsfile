@@ -37,7 +37,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 dir('resources/vpc') {
-                    sh 'terraform apply -auto-approve tfplan'
+                    sh 'terraform destroy -auto-approve tfplan'
                 }
             }
         }
