@@ -1,0 +1,34 @@
+project_id               = "nasir-434503"
+region                   = "asia-southeast1"
+name                     = "gke"
+description              = "gke"
+network                  = "nasir"
+subnetwork               = "gke"
+network_project_id       = "nasir-434503"
+kubernetes_version       = "1.30.2-gke.1587003"
+datapath_provider        = "LEGACY_DATAPATH"
+networking_mode          = "VPC_NATIVE"
+ip_range_pods            = "pod"
+ip_range_services        = "service"
+master_ipv4_cidr_block   = "10.21.14.0/28"
+regional                 = false
+zones                    = ["asia-southeast1-b"]
+deletion_protection      = false
+remove_default_node_pool = true
+node_pool_name           = "pool"
+machine_type             = "e2-standard-2"
+image_type               = "COS_CONTAINERD"
+local_ssd_count          = 0
+disk_size_gb             = 50
+disk_type                = "pd-standard"
+preemptible              = false
+node_locations           = "asia-southeast1-c"
+autoscaling              = true
+min_count                = 1
+max_count                = 10
+initial_node_count       = 1
+max_pods_per_node        = 110
+node_metadata            = "GKE_METADATA"
+enable_private_nodes     = true
+
+                                                      
