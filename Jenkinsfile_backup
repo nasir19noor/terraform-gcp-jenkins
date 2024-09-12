@@ -14,25 +14,32 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                dir('resources/vpc') {
+                    sh 'terraform init'
+                }
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan -out=tfplan'
+                dir('resources/vpc') {
+                    sh 'terraform plan -out=tfplan'
+                }
             }
         }
 
         stage('Approval') {
             steps {
-                input message: 'Do you want to apply this plan?'
+                input message: 'Do you want to apply the terraform plan?', ok: 'Yes'
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve tfplan'
+                dir('resources/vpc') {
+                    sh 'terraform apply -auto-approve tfplan'
+                    // sh 'terraform destroy -auto-approve'
+                }
             }
         }
     }
